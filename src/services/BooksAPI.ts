@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export interface IBookInfo {
+  id: string;
   author: string;
   country: string;
   imageLink: string;
@@ -19,3 +20,9 @@ export const api = axios.create({
 
 export const getBooks = (): Promise<IBookInfo[]> =>
   api.get(baseURL).then((response) => response.data);
+
+export const searchBooks = (searchParams: URLSearchParams) =>
+  api.get(`${baseURL}?${searchParams}`).then((response) => response.data);
+
+export const getBookById = (id: string) =>
+  api.get(`${baseURL}/${id}`).then((response) => response.data);
