@@ -12,6 +12,15 @@ export interface IBookInfo {
   year: number;
 }
 
+export interface IBookRequest {
+  author: string;
+  country: string;
+  imageLink: string;
+  language: string;
+  title: string;
+  year: number;
+}
+
 const baseURL = "http://localhost:3000/books";
 
 export const api = axios.create({
@@ -27,5 +36,8 @@ export const searchBooks = (searchParams: URLSearchParams) =>
 export const getBookById = (id: string) =>
   api.get(`${baseURL}/${id}`).then((response) => response.data);
 
-export const deleteBook = (id: string) => 
-  api.delete(`${baseURL}/${id}`).then((response) => response.data)
+export const deleteBook = (id: string) =>
+  api.delete(`${baseURL}/${id}`).then((response) => response.data);
+
+export const createBook = (request: IBookRequest) =>
+  api.post(`${baseURL}`, request);
