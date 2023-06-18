@@ -1,9 +1,10 @@
+import { Title } from "../../components/Title";
 import { Container } from "./styles";
 
 const NotFound = () => {
   return (
     <Container>
-      <h1>Page Not Found</h1>
+      <Title text={"Page Not Found"} />
       <img src="/src/assets/images/not-found.svg" alt="" />
     </Container>
   );

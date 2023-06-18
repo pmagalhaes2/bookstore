@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { IBookInfo, getBookById } from "../../../services/BooksAPI";
 import { Card } from "../../../components/Card";
 import { Container } from "../styles";
+import { Title } from "../../../components/Title";
 
 export const Details = () => {
   const { id } = useParams();
@@ -17,7 +18,7 @@ export const Details = () => {
 
   return (
     <Container>
-      <h1>Details</h1>
+      <Title text={"Details"} />
       <Card
         info={{
           id: bookInfo.id,

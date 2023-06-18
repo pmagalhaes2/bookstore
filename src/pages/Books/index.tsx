@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { IBookInfo, getBooks } from "../../services/BooksAPI";
 import { Card } from "../../components/Card";
 import { Container } from "./styles";
+import { Title } from "../../components/Title";
 
 export const Books = () => {
   const [books, setBooks] = useState<IBookInfo[]>([]);
@@ -16,7 +17,7 @@ export const Books = () => {
 
   return (
     <Container>
-      <h1>Books</h1>
+      <Title text={"Books"} />
       <div className="card-container">
         {books.map((book, index) => (
           <Card
@@ -29,7 +30,7 @@ export const Books = () => {
               link: book.link,
               title: book.title,
               year: book.year,
-              detailsButton: true
+              detailsButton: true,
             }}
             key={index}
           />
