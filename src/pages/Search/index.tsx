@@ -1,6 +1,8 @@
 import { useSearchParams } from "react-router-dom";
 import { IBookInfo, searchBooks } from "../../services/BooksAPI";
 import { useCallback, useEffect, useState } from "react";
+import { Container } from "./styles";
+import { Link } from "react-router-dom";
 
 export const Search = () => {
   const [searchParams] = useSearchParams();
@@ -31,7 +33,18 @@ export const Search = () => {
       {error && <p>Ocorreu um erro!</p>}
       {data.length === 0 && <p>Nenhum encontrado</p>}
       {loading && <p>Carregando dados..</p>}
-      {data && data.map((d, index) => <p key={index}>{d.title}</p>)}
+      {data && (
+        <Container>
+          <h2>
+            <span>{data.length}</span> registers for <span>Website</span>
+          </h2>
+          {data.map((item, index) => (
+            <Link to={`/books/${item.id}`}>
+              <p key={index}>{item.title}</p>
+            </Link>
+          ))}
+        </Container>
+      )}
     </>
   );
 };
