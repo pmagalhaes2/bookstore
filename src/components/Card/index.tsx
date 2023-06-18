@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
-import { Container, TextContainer } from "./styles";
+import { Link, useNavigate } from "react-router-dom";
+import { ButtonContainer, Container, TextContainer } from "./styles";
+import { deleteBook } from "../../services/BooksAPI";
 
 interface IProps {
   info: {
@@ -26,6 +27,24 @@ export const Card = ({ info }: IProps) => {
     title,
     detailsButton,
   } = info;
+
+  const navigate = useNavigate();
+
+  const handleDelete = (id: string) => {
+    try {
+      const option = confirm(
+        "The operation is irreversible. Are you sure you want to remove the selected item?"
+      );
+
+      if (option) {
+        deleteBook(id);
+        alert(`Book deleted successfully!`);
+        navigate("/");
+      } else return;
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <Container detailsButton={detailsButton}>
       <h2>{title}</h2>
@@ -54,9 +73,14 @@ export const Card = ({ info }: IProps) => {
       </TextContainer>
 
       {detailsButton ? (
-        <Link to={`/books/${id}`}>Details</Link>
+        <ButtonContainer>
+          <button onClick={() => handleDelete(id)}>Delete</button>
+          <Link to={`/books/${id}`}>Details</Link>
+        </ButtonContainer>
       ) : (
-        <Link to={`/books`}>Voltar</Link>
+        <ButtonContainer>
+          <Link to={`/books`}>Return</Link>
+        </ButtonContainer>
       )}
     </Container>
   );

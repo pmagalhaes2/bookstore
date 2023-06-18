@@ -17,8 +17,7 @@ export const Container = styled.div<IProps>`
   box-shadow: 1px 1px 20px #0e0d12;
   align-items: center;
   gap: 2rem;
-  margin: ${({ detailsButton }) =>
-    detailsButton ? "0" : "2rem auto"};
+  margin: ${({ detailsButton }) => (detailsButton ? "0" : "2rem auto")};
 
   span {
     font-weight: 700;
@@ -28,19 +27,32 @@ export const Container = styled.div<IProps>`
     width: 250px;
     height: 350px;
   }
+`;
 
-  a {
+export const ButtonContainer = styled.div`
+  display: flex;
+  gap: 1rem;
+
+  a, button {
     width: 120px;
     height: 30px;
     text-transform: uppercase;
     text-decoration: none;
     font-weight: 600;
+    font-size: 0.8rem;
     color: #fff;
-    border-radius: 1rem;
+    border-radius: 0.3rem;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #5280e2;
+  }
+
+  button {
+    color: #f53649;
+    border: 2px solid #f53649;
+    background-color: transparent;
+    cursor: pointer;
   }
 `;
 

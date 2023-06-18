@@ -26,3 +26,6 @@ export const searchBooks = (searchParams: URLSearchParams) =>
 
 export const getBookById = (id: string) =>
   api.get(`${baseURL}/${id}`).then((response) => response.data);
+
+export const deleteBook = (id: string) => 
+  api.delete(`${baseURL}/${id}`).then((response) => response.data)
