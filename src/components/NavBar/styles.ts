@@ -21,15 +21,20 @@ export const Container = styled.nav`
       align-items: center;
       justify-content: center;
       outline: none;
-      color: rgba(255, 255, 255, 0.87);
+      color: #c4c4c4;
+
+      ::placeholder {
+        font-size: 0.9rem;
+        font-weight: 400;
+      }
     }
 
-    input[type=submit] {
+    input[type="submit"] {
       text-transform: uppercase;
       font-weight: 600;
       letter-spacing: 0.1rem;
-      background-color: #2F3034;
-      border: 2px solid #5280E2;
+      background-color: #2f3034;
+      border: 2px solid #5280e2;
     }
   }
 
@@ -45,10 +50,10 @@ export const Container = styled.nav`
     text-transform: uppercase;
     font-size: 1.2rem;
     font-weight: 500;
-    color: #5280E2;
+    color: #5280e2;
   }
 
   .active {
-    border-bottom: 2px solid #5280E2;
+    border-bottom: 2px solid #5280e2;
   }
 `;
