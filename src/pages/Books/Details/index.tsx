@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { IBookInfo, getBookById } from "../../../services/BooksAPI";
 import { Card } from "../../../components/Card";
-import { Container } from "../styles";
+import { Container } from "./styles";
 import { Title } from "../../../components/Title";
 
 export const Details = () => {
@@ -25,7 +25,6 @@ export const Details = () => {
           author: bookInfo.author,
           country: bookInfo.country,
           imageLink: bookInfo.imageLink,
-          language: bookInfo.language,
           link: bookInfo.link,
           title: bookInfo.title,
           year: bookInfo.year,

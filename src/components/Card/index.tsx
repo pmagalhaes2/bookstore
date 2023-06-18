@@ -8,7 +8,6 @@ interface IProps {
     author: string;
     country: string;
     imageLink: string;
-    language: string;
     link: string;
     title: string;
     year: number;
@@ -21,7 +20,6 @@ export const Card = ({ info }: IProps) => {
     id,
     author,
     country,
-    language,
     year,
     imageLink,
     title,
@@ -59,10 +57,6 @@ export const Card = ({ info }: IProps) => {
             <p>
               <span>Country: </span>
               {country}
-            </p>
-            <p>
-              <span>Language: </span>
-              {language}
             </p>
             <p>
               <span>Year: </span>

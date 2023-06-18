@@ -26,7 +26,6 @@ export const Books = () => {
               author: book.author,
               country: book.country,
               imageLink: book.imageLink,
-              language: book.language,
               link: book.link,
               title: book.title,
               year: book.year,
