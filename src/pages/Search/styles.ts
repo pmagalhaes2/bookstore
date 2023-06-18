@@ -18,5 +18,9 @@ export const Container = styled.div`
   a {
     text-decoration: none;
     color: #fff;
+
+    p {
+      text-transform: capitalize;
+    }
   }
 `;
