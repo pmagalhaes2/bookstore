@@ -39,9 +39,11 @@ export const Search = () => {
             <span>{data.length}</span> registers for <span>Website</span>
           </h2>
           {data.map((item, index) => (
-            <Link to={`/books/${item.id}`}>
-              <p key={index}>{item.title}</p>
-            </Link>
+            <div key={index}>
+              <Link to={`/books/${item.id}`}>
+                <p>{item.title}</p>
+              </Link>
+            </div>
           ))}
         </Container>
       )}
