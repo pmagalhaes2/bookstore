@@ -35,6 +35,7 @@ export const Container = styled.nav`
       letter-spacing: 0.1rem;
       background-color: #2f3034;
       border: 2px solid #5280e2;
+      cursor: pointer;
     }
   }
 

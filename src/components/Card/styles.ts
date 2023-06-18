@@ -19,6 +19,10 @@ export const Container = styled.div<IProps>`
   gap: 2rem;
   margin: ${({ detailsButton }) => (detailsButton ? "0" : "2rem auto")};
 
+  h2, p {
+    text-transform: capitalize;
+  }
+
   span {
     font-weight: 700;
   }

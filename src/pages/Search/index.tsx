@@ -30,9 +30,8 @@ export const Search = () => {
 
   return (
     <>
-      {error && <p>Ocorreu um erro!</p>}
-      {data.length === 0 && <p>Nenhum encontrado</p>}
-      {loading && <p>Carregando dados..</p>}
+      {error && <p>An error ocurred!</p>}
+      {loading && <p>Loading data...</p>}
       {data && (
         <Container>
           <h2>

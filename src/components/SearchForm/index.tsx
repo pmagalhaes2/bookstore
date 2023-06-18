@@ -7,8 +7,12 @@ export const SearchForm = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    navigate("search?q=" + query);
-    setQuery("");
+    if (query) {
+      navigate("search?q=" + query);
+      setQuery("");
+    } else {
+      alert('Type your search!')
+    }
   };
 
   return (
